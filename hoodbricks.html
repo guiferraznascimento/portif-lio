@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HOODBRICKS  Gui Ferraz</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:white;
+    color:#111;
+    padding:40px;
+    overflow-x:hidden;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    width:100%;
+    position:relative;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar{
+    width:700px;
+    position:fixed;
+    top:40px;
+    left:40px;
+}
+
+.name-button{
+    display:inline-block;
+    font-size:clamp(22px,3vw,34px);
+    line-height:1;
+    font-weight:bold;
+    color:#111;
+    margin-bottom:20px;
+    text-decoration:none;
+    transition:.3s;
+    white-space:normal;
+    word-break:break-word;
+}
+
+.name-button:hover{
+    opacity:.6;
+    transform:translateX(3px);
+}
+
+.sidebar p{
+    color:gray;
+    font-size:15px;
+    margin-bottom:70px;
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:gray;
+    font-size:16px;
+    transition:.3s;
+    width:fit-content;
+}
+
+.menu a:hover{
+    color:black;
+    transform:translateX(5px);
+}
+
+.active{
+    color:black !important;
+    font-weight:bold;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    width:100%;
+    padding-left:520px;
+    padding-right:100px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.hero h2{
+    font-size:42px;
+    letter-spacing:3px;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.hero span{
+    display:block;
+    color:#777;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:12px;
+    color:#777;
+    letter-spacing:1px;
+}
+
+/* ================= MAIN IMAGE ================= */
+
+.main-image{
+    max-width:900px;
+    margin:0 auto 50px;
+}
+
+.main-image img{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:cover;
+}
+
+/* ================= TEXT ================= */
+
+.text-section{
+    max-width:900px;
+    margin:auto;
+}
+
+.text-section h3{
+    margin:60px 0 20px;
+    font-size:15px;
+    letter-spacing:1px;
+    font-weight:600;
+}
+
+.text-section p{
+    font-size:14px;
+    line-height:2;
+    margin-bottom:24px;
+    color:#222;
+}
+
+/* ================= IMAGE SECTION ================= */
+
+.image-section{
+    max-width:900px;
+    margin:50px auto;
+}
+
+.image-section h4{
+    font-size:12px;
+    letter-spacing:1px;
+    color:#666;
+    margin-bottom:12px;
+    font-weight:500;
+}
+.image-section img{
+    width:100%;
+    height:300px;
+    display:block;
+    object-fit:cover;
+}
+.sketching-img{
+    height:auto !important;
+}
+/* ================= FINAL PROJECT ================= */
+
+.final-grid{
+    max-width:1100px;
+    margin:60px auto;
+}
+
+.final-grid img{
+    width:100%;
+    height:850px;
+    object-fit:cover;
+    display:block;
+}
+
+/* ================= CREDITS ================= */
+
+.credits-section{
+    max-width:900px;
+    margin:60px auto;
+}
+
+.credits-section h4{
+    font-size:12px;
+    letter-spacing:1px;
+    color:#666;
+    margin-bottom:15px;
+}
+
+.credits-section p{
+    font-size:14px;
+    color:#777;
+    line-height:1.8;
+}
+
+/* ================= RELATED ================= */
+
+.related-section{
+    max-width:900px;
+    margin:80px auto;
+}
+
+.related-section h3{
+    text-align:center;
+    font-size:26px;
+    margin-bottom:50px;
+    font-weight:600;
+}
+
+.related-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.project-card{
+    text-decoration:none;
+    color:#111;
+    transition:.35s;
+}
+
+.project-card:hover{
+    transform:translateY(-6px);
+    opacity:.92;
+}
+
+.project-card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    background:#dcdcdc;
+    display:block;
+}
+
+.project-card h4{
+    text-align:center;
+    margin-top:18px;
+    font-size:20px;
+}
+
+.project-card span{
+    display:block;
+    text-align:center;
+    margin-top:8px;
+    font-size:11px;
+    color:#777;
+    letter-spacing:1px;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media(max-width:1200px){
+
+    .content{
+        padding-left:420px;
+        padding-right:40px;
+    }
+
+    .sidebar{
+        width:320px;
+    }
+
+}
+
+@media(max-width:980px){
+
+    body{
+        padding:25px;
+    }
+
+    .sidebar{
+        position:relative;
+        width:100%;
+        top:0;
+        left:0;
+        margin-bottom:50px;
+    }
+
+    .content{
+        padding-left:0;
+        padding-right:0;
+    }
+
+    .hero h2{
+        font-size:34px;
+    }
+
+    .related-grid{
+        grid-template-columns:1fr;
+    }
+
+    .final-grid img{
+        height:auto;
+    }
+
+}
+
+@media(max-width:768px){
+
+    body{
+        padding:18px;
+    }
+
+    .name-button{
+        font-size:28px;
+    }
+
+    .sidebar p{
+        margin-bottom:40px;
+    }
+
+    .menu{
+        gap:14px;
+    }
+
+    .menu a{
+        font-size:15px;
+    }
+
+    .hero h2{
+        font-size:26px;
+        letter-spacing:2px;
+    }
+
+    .text-section p{
+        font-size:13px;
+        line-height:1.8;
+    }
+
+    .image-section img{
+        height:220px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    body{
+        padding:14px;
+    }
+
+    .name-button{
+        font-size:22px;
+        line-height:1.1;
+    }
+
+    .hero h2{
+        font-size:22px;
+    }
+
+    .project-card h4{
+        font-size:18px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <a href="index.html" class="name-button">
+        Guilherme Ferraz Nascimento
+    </a>
+
+    <p>Industrial Designer Student</p>
+
+    <div class="menu">
+        <a href="work.html" class="active">Work</a>
+        <a href="academic.html">Academic</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+</div>
+
+<!-- CONTENT -->
+
+<main class="content">
+
+<section class="hero">
+
+    <h2>HOODBRICKS</h2>
+
+    <span>2025</span>
+
+    <p>A Studio concept about autoral 3D Printed Shoes</p>
+
+</section>
+
+<div class="main-image">
+    <img src="800d61a484816a127913dcd235a1963928fd91c0.png" alt="">
+</div>
+
+
+
+   <section class="text-section">
+
+    <p>
+        The collectibles market and streetwear culture operate under a logic of identity and rapid trend cycles. However, the development of physical products in this category often faces limitations in conventional manufacturing, hindering agility and fidelity to the complex details present in urban apparel. While collaborating with NUBO 3D, I identified that the main point of friction between creative conception and small-batch production is the rigidity and high cost of molds for plastic injection.
+    </p>
+
+    <p>
+        For the blind box model, which requires high differentiation and variations in accessories, the investment in fixed molds often makes collection diversity unfeasible and delays market response. As a solution to this gap, I developed the HOODBRICKS collection at the invitation of NUBO 3D, using a design approach natively conceived for digital fabrication.
+    </p>
+
+    <p>
+        The technical differentiator of this project lies in the application of Design for Additive Manufacturing (DfAM). When designing specifically for NUBO 3D technology, we explored geometries and textures that simulate synthetic materials with a precision that traditional processes would struggle to achieve without high tooling costs. This modular design structure allows for the creation of variations and unique pieces with greater flexibility, reducing production costs and enabling more dynamic scaling.
+    </p>
+
+    <p>
+        Product design, combined with additive manufacturing, becomes a technically viable tool for niche projects. This exercise demonstrates how digital fabrication can integrate form and function to efficiently materialize cultural identities. I also believe that the design model can be interesting for making it increasingly personalized and easily modified, facilitating not only small changes but also the personalization of each small character.
+    </p>
+
+    <h3>PROBLEMATIC AND DIFFERENTIATING</h3>
+
+    <p>
+        The shoe is based on the idea that human feet are extremely diverse, but the industry has historically produced standardized, rigid, and poorly adaptable footwear. The project proposes to reverse this logic by using 3D printing and nature-inspired structures to create a more organic, responsive, and personalized system.
+    </p>
+
+    <p>
+        The goal is not just to "print a shoe," but to develop a structure that behaves similarly to biological systems: adapting pressure, absorbing impact, and distributing effort according to body movement.
+    </p>
+
+</section>
+
+
+<div class="image-section">
+
+    <h4>SKETCHING</h4>
+
+    <img src="610a2beda3701535558e1f5ed063ccdd4a114603.png" alt="" class="sketching-img">
+
+</div>
+
+<div class="image-section">
+
+    <h4>PROTOTYPING</h4>
+
+    <img src="d8274a3d2075c8a512a609d8edaf1c96bfdd793a.jpg" alt="">
+    <br>
+    <img src="52c01c1968ec40136018894da5f70edad4527654.png" alt="">
+
+</div>
+
+<section class="final-grid">
+    <img src="Design sem nome (3).jpg" alt="">
+</section>
+
+<section class="credits-section">
+
+    <h4>CREDITS</h4>
+
+    <p>Designer: Guilherme Ferraz</p>
+    <p>3D Artist: Guilherme Ferraz</p>
+    <p>Photography: Guilherme Ferraz</p>
+
+</section>
+
+<section class="related-section">
+
+    <h3>YOU MAY ALSO LIKE</h3>
+
+    <div class="related-grid">
+
+        <a href="" class="project-card">
+
+            <img src="" alt="">
+
+            <h4>DELUXE</h4>
+
+            <span>BRAND DESIGN PROJECT</span>
+
+        </a>
+
+        <a href="" class="project-card">
+
+            <img src="" alt="">
+
+            <h4>NEPHEW X SMIRNOFF</h4>
+
+            <span>VISUAL COLLABORATION PROJECT</span>
+
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LLANA  Gui Ferraz</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:white;
+    color:#111;
+    padding:40px;
+    overflow-x:hidden;
+}
+
+/* CONTAINER */
+
+.container{
+    width:100%;
+    position:relative;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width:700px;
+    position:fixed;
+    top:40px;
+    left:40px;
+}
+
+.name-button{
+    display:inline-block;
+    font-size:clamp(22px,3vw,34px);
+    line-height:1;
+    font-weight:bold;
+    color:#111;
+    margin-bottom:20px;
+    text-decoration:none;
+    transition:.3s;
+    white-space:normal;
+    word-break:break-word;
+}
+
+.name-button:hover{
+    opacity:.6;
+    transform:translateX(3px);
+}
+
+.sidebar p{
+    color:gray;
+    font-size:15px;
+    margin-bottom:70px;
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:gray;
+    font-size:16px;
+    transition:.3s;
+    width:fit-content;
+}
+
+.menu a:hover{
+    color:black;
+    transform:translateX(5px);
+}
+
+.active{
+    color:black !important;
+    font-weight:bold;
+}
+
+/* CONTENT */
+
+.content{
+    width:100%;
+    padding-left:520px;
+    padding-right:100px;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.hero h2{
+    font-size:42px;
+    letter-spacing:4px;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.hero span{
+    display:block;
+    color:#777;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:12px;
+    color:#777;
+    letter-spacing:1px;
+}
+
+/* MAIN IMAGE */
+
+.main-image{
+    max-width:900px;
+    margin:0 auto 50px;
+}
+
+.main-image img{
+    width:100%;
+    display:block;
+    object-fit:cover;
+}
+
+/* TEXT */
+
+.text-section{
+    max-width:900px;
+    margin:auto;
+}
+
+.text-section p{
+    font-size:14px;
+    line-height:2;
+    margin-bottom:24px;
+    color:#222;
+}
+
+.text-section h3{
+    margin:60px 0 20px;
+    font-size:14px;
+    letter-spacing:1px;
+    font-weight:600;
+}
+
+/* IMAGE SECTION */
+
+.image-section{
+    max-width:900px;
+    margin:50px auto;
+}
+
+.image-section h4{
+    font-size:12px;
+    letter-spacing:1px;
+    color:#666;
+    margin-bottom:12px;
+    font-weight:500;
+}
+
+.image-section img{
+    width:100%;
+    display:block;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+/* GRID */
+
+.grid-gallery{
+    max-width:900px;
+    margin:50px auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.grid-gallery img{
+    width:100%;
+    display:block;
+    object-fit:cover;
+}
+
+.large-image{
+    grid-column:1 / -1;
+}
+
+/* CREDITS */
+
+.credits-section{
+    max-width:900px;
+    margin:60px auto;
+}
+
+.credits-section h4{
+    font-size:12px;
+    letter-spacing:1px;
+    color:#666;
+    margin-bottom:15px;
+}
+
+.credits-section p{
+    font-size:14px;
+    color:#777;
+    line-height:1.8;
+}
+
+/* RELATED */
+
+.related-section{
+    max-width:900px;
+    margin:80px auto;
+}
+
+.related-section h3{
+    text-align:center;
+    font-size:26px;
+    margin-bottom:50px;
+    font-weight:600;
+}
+
+.related-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.project-card{
+    text-decoration:none;
+    color:#111;
+    transition:.35s;
+    display:block;
+}
+
+.project-card:hover{
+    transform:translateY(-6px);
+    opacity:.92;
+}
+
+.project-card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    background:#dcdcdc;
+    display:block;
+}
+
+.project-card h4{
+    text-align:center;
+    margin-top:18px;
+    font-size:22px;
+    font-weight:700;
+}
+
+.project-card span{
+    display:block;
+    text-align:center;
+    margin-top:8px;
+    font-size:11px;
+    color:#777;
+    letter-spacing:1px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1200px){
+
+    .content{
+        padding-left:420px;
+        padding-right:40px;
+    }
+
+    .sidebar{
+        width:320px;
+    }
+
+}
+
+@media(max-width:980px){
+
+    body{
+        padding:25px;
+    }
+
+    .sidebar{
+        position:relative;
+        width:100%;
+        top:0;
+        left:0;
+        margin-bottom:50px;
+    }
+
+    .content{
+        padding-left:0;
+        padding-right:0;
+    }
+
+    .hero h2{
+        font-size:34px;
+        letter-spacing:2px;
+    }
+
+    .grid-gallery{
+        grid-template-columns:1fr;
+    }
+
+    .related-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    body{
+        padding:18px;
+    }
+
+    .name-button{
+        font-size:28px;
+    }
+
+    .sidebar p{
+        margin-bottom:40px;
+    }
+
+    .menu{
+        gap:14px;
+    }
+
+    .menu a{
+        font-size:15px;
+    }
+
+    .hero h2{
+        font-size:24px;
+    }
+
+    .text-section p{
+        font-size:13px;
+        line-height:1.8;
+    }
+
+}
+
+@media(max-width:480px){
+
+    body{
+        padding:14px;
+    }
+
+    .name-button{
+        font-size:22px;
+    }
+
+    .hero h2{
+        font-size:20px;
+    }
+
+    .main-image img,
+    .image-section img,
+    .grid-gallery img{
+        width:100%;
+        height:auto;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <a href="index.html" class="name-button">
+        Guilherme Ferraz Nascimento
+    </a>
+
+    <p>Industrial Designer Student</p>
+
+    <div class="menu">
+        <a href="work.html" class="active">Work</a>
+        <a href="academic.html">Academic</a>
+        <a href="about.html">About</a>
+        <a href="contato.html">Contact</a>
+    </div>
+
+</div>
+
+<!-- CONTENT -->
+
+<main class="content">
+
+<section class="hero">
+
+    <h2>LLANA</h2>
+
+    <span>2024</span>
+
+    <p>Biomimetic bag inspired by armadillo.</p>
+
+</section>
+
+<!-- MAIN IMAGE -->
+
+<div class="main-image">
+    <img src="ba4f5a82b7dd95fa4fc723510288f4ba287a1c62.jpg" alt="">
+</div>
+
+<!-- TEXT -->
+
+<section class="text-section">
+
+    <p>
+        Llana is a product design project developed as a team, combining
+        ethnographic research, biomimicry, and textile manufacturing to create
+        a functional, versatile bag with its own visual identity.
+    </p>
+
+    <p>
+        The starting point was nature. The team adopted a biomimic approach as
+        a creative guiding thread, seeking formal and conceptual inspiration for
+        the bag in the annatto  a native South American fruit whose red seeds
+        are clustered inside a hollow, spiny fruit.
+    </p>
+
+    <p>
+        The morphology of the fruit, which opens and closes to reveal its
+        contents, directly guided the opening system and the organic shape of
+        the bag.
+    </p>
+
+    <p>
+        User research was central. The team mapped the complete journey of a
+        person who works, studies, and has an active social life  from the
+        moment they prepare their bag in the morning to washing it on the
+        weekend.
+    </p>
+
+    <p>
+        This map revealed real pain points: the need to have valuable items
+        accessible and safe on the go, the bag's adaptability to different
+        contexts throughout the day (work, college, leisure), and the
+        importance of easy cleaning without damaging the product.
+    </p>
+
+    <p>
+        The design requirements emerged from this listening process.
+        Standardization of attachable internal compartments, balanced weight
+        distribution, context-adaptable straps, dynamic access locks, and wash
+        resistance were the criteria that guided the entire development.
+    </p>
+
+    <p>
+        The creative process was iterative and documented. The sketches show
+        the transition from the shape of the annatto fruit to the silhouette of
+        the bag, going through studies of fit, strap adjustment, and
+        exploration of colors and materials.
+    </p>
+
+    <p>
+        The prototypes were progressively builtfirst in paper and cardboard to
+        validate shape and ergonomics on the body, then in acrylic batting to
+        test volume, and finally in the final version in green denim and red
+        tricoline, with lining and strap in grosgrain ribbon.
+    </p>
+
+    <p>
+        The result is a finished product, photographed and with its own brand.
+        The "Llana" visual identity was developed with an organic logo and a
+        color palette reminiscent of annatto seeds  reds, earth tones, and
+        greens.
+    </p>
+
+    <p>
+        The final bag was photographed in a real-world context, demonstrating
+        ergonomics and aesthetics in combination.
+    </p>
+
+</section>
+
+<!-- SKETCHING -->
+
+<div class="image-section">
+
+    <h4>SKETCHING</h4>
+
+    <img src="e8911241983b27b30d548538e72bb80456164f9c.png" alt="">
+    <img src="8d07916ebf30cd161920d2165568f1cf095c5f27.png" alt="">
+
+</div>
+
+<!-- PROCESS -->
+
+<div class="image-section">
+
+    <h4>PROCESS AND TESTING</h4>
+
+    <img src="f8f5364931dcce7cb8f1dced547a3da858de26a9.png" alt="">
+
+</div>
+
+<!-- PROTOTYPING -->
+
+<div class="image-section">
+
+    <h4>PROTOTYPING</h4>
+
+    <img src="6153cd85908ba9e8eb501583e37a967816996ee3.png" alt="">
+
+</div>
+
+<!-- FINAL PROJECT -->
+
+<section class="grid-gallery">
+
+    <img src="Design sem nome (2).jpg" alt="" class="large-image">
+
+</section>
+
+<!-- CREDITS -->
+
+<section class="credits-section">
+
+    <h4>CREDITS</h4>
+
+    <p>
+        Designers: Ana Luiza Lourenço, Gabriel Barros,
+        Guilherme Ferraz, Leticia Araujo,
+        Paulo Freire e Theo Guimarães.
+    </p>
+
+    <p>
+        Modelista: João Paulo Camargo
+    </p>
+
+    <p>
+        Photograph: Paulo Freire
+    </p>
+
+    <p>
+        Prof. Igor e Anna Stolf
+    </p>
+
+</section>
+
+<!-- RELATED -->
+
+<section class="related-section">
+
+    <h3>YOU MAY ALSO LIKE</h3>
+
+    <div class="related-grid">
+
+        <a href="ruptura.html" class="project-card">
+
+            <img src="6c974cfcaba2ac11571073f6ffed08854e88b21b.jpg" alt="">
+
+            <h4>RUPTURA DA MATRIZ</h4>
+
+            <span>PRODUCT DESIGN USING MARQUETRY</span>
+
+        </a>
+
+        <a href="axon.html" class="project-card">
+
+            <img src="1c3c66a59a5ec53e6b9d57b101fed3cf028f391c.png" alt="">
+
+            <h4>AXON</h4>
+
+            <span>STUDIO FOR ORIGINAL 3D PRINTED FOOTWEAR</span>
+
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+</div>
+
+</body>
+</html>

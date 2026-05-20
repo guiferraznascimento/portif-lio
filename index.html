@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:white;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+    }
+
+    .container{
+      width:100%;
+      max-width:900px;
+      background:white;
+      padding:60px 30px;
+      text-align:center;
+    }
+
+    h1{
+      font-size:clamp(28px, 5vw, 42px);
+      color:#111;
+      margin-bottom:10px;
+    }
+
+    p{
+      color:gray;
+      margin-bottom:50px;
+      font-size:clamp(14px, 2vw, 18px);
+    }
+
+    .buttons{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      align-items:center;
+    }
+.buttons a{
+  text-decoration:none;
+  display:flex;
+  justify-content:center;
+}
+   
+
+    button{
+     width:220px;
+      height:55px;
+      border-radius:50px;
+      border:1px solid #999;
+      background:white;
+      font-size:16px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:black;
+      color:white;
+      transform:scale(1.03);
+    }
+
+
+h1{
+  font-size:clamp(28px, 5vw, 42px);
+  color:#111;
+  margin-bottom:10px;
+
+  animation:cair 1s ease;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Guilherme Ferraz Nascimento</h1>
+
+    <p>Industrial Designer Student</p>
+
+    <div class="buttons">
+
+      <a href="work.html">
+        <button>WORK</button>
+      </a>
+
+      <a href="academic.html">
+        <button>ACADEMIC</button>
+      </a>
+
+      <a href="about.html">
+        <button>ABOUT</button>
+      </a>
+
+      <a href="contato.html">
+        <button>CONTACT</button>
+      </a>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

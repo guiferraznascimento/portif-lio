@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Academic</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:white;
+    min-height:100vh;
+    padding:40px;
+    overflow-x:hidden;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    width:100%;
+    position:relative;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar{
+    width:700px;
+    position:fixed;
+    top:40px;
+    left:40px;
+}
+
+.name-button{
+    display:inline-block;
+    font-size:clamp(22px,3vw,34px);
+    line-height:1;
+    font-weight:700;
+    color:#111;
+    margin-bottom:20px;
+    text-decoration:none;
+    transition:.3s;
+    white-space:normal;
+    word-break:break-word;
+}
+
+.name-button:hover{
+    opacity:.6;
+    transform:translateX(3px);
+}
+
+.sidebar p{
+    color:gray;
+    font-size:15px;
+    margin-bottom:70px;
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:gray;
+    font-size:16px;
+    transition:.3s;
+    width:fit-content;
+}
+
+.menu a:hover{
+    color:black;
+    transform:translateX(5px);
+}
+
+.active{
+    color:black !important;
+    font-weight:600;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    width:100%;
+    padding-left:520px;
+    padding-right:100px;
+}
+
+/* ================= GRID ================= */
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:40px 35px;
+}
+
+/* ================= CARD ================= */
+
+.project-card{
+    width:100%;
+    text-align:center;
+    text-decoration:none;
+    color:#111;
+    display:block;
+    transition:.35s;
+}
+
+.project-card:hover{
+    transform:translateY(-5px);
+}
+
+.project-image{
+    width:100%;
+    aspect-ratio:1/1;
+    overflow:hidden;
+    background:#e5e5e5;
+}
+
+.project-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    transition:.4s;
+    display:block;
+}
+
+.project-card:hover img{
+    transform:scale(1.03);
+}
+
+.project-title{
+    margin-top:16px;
+    font-size:18px;
+    font-weight:700;
+    color:#111;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+.project-subtitle{
+    margin-top:6px;
+    font-size:10px;
+    color:#888;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    line-height:1.6;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media(max-width:1200px){
+
+    .sidebar{
+        width:320px;
+    }
+
+    .content{
+        padding-left:420px;
+        padding-right:40px;
+    }
+
+}
+
+@media(max-width:980px){
+
+    body{
+        padding:25px;
+    }
+
+    .container{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .sidebar{
+        position:relative;
+        width:100%;
+        top:0;
+        left:0;
+        margin-bottom:60px;
+    }
+
+    .content{
+        padding-left:0;
+        padding-right:0;
+    }
+
+}
+
+@media(max-width:900px){
+
+    .projects-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    body{
+        padding:18px;
+    }
+
+    .name-button{
+        font-size:28px;
+    }
+
+    .sidebar p{
+        margin-bottom:40px;
+    }
+
+    .menu{
+        gap:14px;
+    }
+
+    .menu a{
+        font-size:15px;
+    }
+
+    .project-title{
+        font-size:17px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    body{
+        padding:14px;
+    }
+
+    .name-button{
+        font-size:22px;
+        line-height:1.1;
+    }
+
+    .project-title{
+        font-size:15px;
+    }
+
+    .project-subtitle{
+        font-size:9px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <a href="index.html" class="name-button">
+            Guilherme Ferraz Nascimento
+        </a>
+
+        <p>Industrial Designer Student</p>
+
+        <div class="menu">
+            <a href="work.html">Work</a>
+            <a href="academic.html" class="active">Academic</a>
+            <a href="about.html">About</a>
+            <a href="contato.html">Contact</a>
+        </div>
+
+    </div>
+
+    <!-- CONTENT -->
+
+    <main class="content">
+
+        <div class="projects-grid">
+
+            <!-- AXON -->
+
+            <a href="axon.html" class="project-card">
+
+                <div class="project-image">
+                    <img src="1c3c66a59a5ec53e6b9d57b101fed3cf028f391c.png" alt="">
+                </div>
+
+                <div class="project-title">
+                    AXON
+                </div>
+
+                <div class="project-subtitle">
+                    STUDIO FOR ORIGINAL 3D PRINTED FOOTWEAR
+                </div>
+
+            </a>
+
+            <!-- RUPTURA -->
+
+            <a href="ruptura.html" class="project-card">
+
+                <div class="project-image">
+                    <img src="6c974cfcaba2ac11571073f6ffed08854e88b21b.jpg" alt="">
+                </div>
+
+                <div class="project-title">
+                    RUPTURA DA MATRIZ
+                </div>
+
+                <div class="project-subtitle">
+                    LAMP CREATED USING MARQUETRY
+                </div>
+
+            </a>
+
+            <!-- LLANA -->
+
+            <a href="llana.html" class="project-card">
+
+                <div class="project-image">
+                    <img src="ba4f5a82b7dd95fa4fc723510288f4ba287a1c62.jpg" alt="">
+                </div>
+
+                <div class="project-title">
+                    LLANA
+                </div>
+
+                <div class="project-subtitle">
+                    BAG INSPIRED BY ANNATTO
+                </div>
+
+            </a>
+
+            
+
+            <!-- ADAPTIVE SYSTEM -->
+
+            <a href="adaptivesystem.html" class="project-card">
+
+                <div class="project-image"></div>
+
+                <div class="project-title">
+                   TITLE
+                </div>
+
+                <div class="project-subtitle">
+                    COMING SOON
+                </div>
+
+            </a>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
